@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer id="contato" className="bg-balone-cream border-t border-balone-sand">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 md:gap-8 px-5 md:px-6 py-10 md:py-12 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-display text-2xl text-balone-black">Brechó Balonê</p>
           <p className="font-display italic text-balone-muted mt-1">

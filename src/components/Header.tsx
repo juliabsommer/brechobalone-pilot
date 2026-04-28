@@ -29,7 +29,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 md:px-6 py-4 md:py-5">
         <Link
           href="#inicio"
           className="flex flex-col leading-none"
@@ -88,7 +88,7 @@ export default function Header() {
 
       {open && (
         <div className="md:hidden border-t border-balone-sand bg-balone-cream">
-          <nav className="mx-auto flex max-w-6xl flex-col px-6 py-4">
+          <nav className="mx-auto flex max-w-6xl flex-col px-5 md:px-6 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
