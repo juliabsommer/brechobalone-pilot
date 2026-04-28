@@ -8,8 +8,8 @@ export default function Hero() {
       className="relative isolate overflow-hidden min-h-[88vh] flex items-end"
     >
       <Image
-        src="/images/fachada-vitrine.jpg"
-        alt="Fachada amarela do Brechó Balonê com vitrine e araras"
+        src="/images/fachada-frente.jpg"
+        alt="Fachada amarela do Brechó Balonê entre árvores, em Porto Alegre"
         fill
         priority
         sizes="100vw"

@@ -58,8 +58,8 @@ export default function Visite() {
 
           <div className="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-2xl">
             <Image
-              src="/images/fachada-mesa.jpg"
-              alt="Mesinha de madeira em frente ao Brechó Balonê"
+              src="/images/fachada-frente.jpg"
+              alt="Fachada do Brechó Balonê vista pela trilha de pedras"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"

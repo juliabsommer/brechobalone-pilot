@@ -25,8 +25,8 @@ export default function Sobre() {
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/images/fachada-frente.jpg"
-              alt="Fachada do Brechó Balonê vista de frente, entre árvores"
+              src="/images/fachada-mesa.jpg"
+              alt="Fachada do Brechó Balonê com mesa de madeira"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
