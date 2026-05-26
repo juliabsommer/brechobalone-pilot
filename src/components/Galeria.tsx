@@ -4,17 +4,28 @@ const fotos = [
   {
     src: "/images/fe-entrada.jpg",
     alt: "Fê Bassi na entrada do Brechó Balonê entre as árvores do Ipanema Sports",
-    className: "md:row-span-2",
+    // mobile: portrait | desktop: spans 2 rows (tall)
+    className: "aspect-[3/4] md:aspect-auto md:row-span-2",
   },
   {
     src: "/images/vitrine-manequins.jpg",
     alt: "Vitrine do Brechó Balonê com manequins e peças selecionadas",
-    className: "",
+    className: "aspect-[3/4]",
   },
   {
     src: "/images/fe-vitrine.jpg",
-    alt: "Fê Bassi em frente à vitrine com araras de roupas ao fundo",
-    className: "",
+    alt: "Fê Bassi em frente à vitrine com peças de grife",
+    className: "aspect-[3/4]",
+  },
+  {
+    src: "/images/interior-araras.jpg",
+    alt: "Interior do brechó com araras de roupas organizadas",
+    className: "aspect-[3/4]",
+  },
+  {
+    src: "/images/provadores.jpg",
+    alt: "Provadores do Brechó Balonê",
+    className: "aspect-[3/4]",
   },
 ];
 
@@ -31,21 +42,18 @@ export default function Galeria() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:grid-rows-2">
+        {/* Mobile: 1 coluna. Desktop: 3 colunas, primeira foto ocupa 2 linhas */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {fotos.map((foto) => (
             <div
               key={foto.src}
               className={`relative overflow-hidden rounded-2xl bg-balone-soft ${foto.className}`}
-              style={{ aspectRatio: foto.className.includes("row-span-2") ? undefined : "3/4" }}
             >
-              {foto.className.includes("row-span-2") && (
-                <div className="absolute inset-0" />
-              )}
               <Image
                 src={foto.src}
                 alt={foto.alt}
                 fill
-                sizes="(min-width: 768px) 33vw, 50vw"
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>

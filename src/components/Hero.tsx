@@ -16,7 +16,7 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-0 -left-20 h-[320px] w-[320px] rounded-full bg-balone-yellow/20 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:gap-20 md:py-36">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-20 md:py-36">
         <div className="flex flex-col">
           <p className="text-[11px] uppercase tracking-[0.38em] text-balone-yellow-dark">
             Desde 2010 · Porto Alegre
@@ -53,14 +53,14 @@ export default function Hero() {
             aria-hidden
             className="absolute -inset-6 rounded-[3rem] bg-balone-yellow/25 blur-2xl"
           />
-          <div className="relative h-[420px] w-full max-w-[360px] overflow-hidden rounded-[3rem] shadow-2xl md:h-[540px] md:max-w-[420px]">
+          <div className="relative h-[340px] w-full max-w-[360px] overflow-hidden rounded-[3rem] shadow-2xl md:h-[540px] md:max-w-[420px]">
             <Image
-              src="/images/fachada-vitrine.jpg"
-              alt="Fachada amarela do Brechó Balonê com vitrine e araras"
+              src="/images/fachada-noite.jpg"
+              alt="Fachada iluminada do Brechó Balonê à noite com o letreiro luminoso"
               fill
               priority
               sizes="(min-width: 768px) 420px, 90vw"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
         </div>

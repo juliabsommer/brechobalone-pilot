@@ -22,6 +22,7 @@ html,
 body {
   background: var(--color-balone-cream);
   color: var(--color-balone-text);
+  overflow-x: hidden;
 }
 
 body {
