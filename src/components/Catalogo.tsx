@@ -92,21 +92,21 @@ function PhoneMockup() {
             </div>
           </div>
 
-          {/* Card 3 — cortado para dar sensação de scroll */}
+          {/* Card 3 */}
           <div className="overflow-hidden rounded-xl bg-white shadow-sm">
             <div className="relative h-[90px]">
               <Image
-                src="/images/interior-araras.jpg"
-                alt="Peça à venda"
+                src="/images/catalogo-blusa.png"
+                alt="Blusa Zara"
                 fill
                 sizes="110px"
                 className="object-cover object-top"
               />
             </div>
             <div className="p-1.5">
-              <p className="text-[8px] font-semibold leading-tight text-[#1e0f38]">Peça exclusiva</p>
-              <p className="text-[7px] text-[#7a6898]">Tam. P</p>
-              <p className="mt-0.5 text-[8px] font-bold text-[#8b5ab8]">R$ 75,00</p>
+              <p className="text-[8px] font-semibold leading-tight text-[#1e0f38]">Blusa Zara</p>
+              <p className="text-[7px] text-[#7a6898]">Tam. P · Bege</p>
+              <p className="mt-0.5 text-[8px] font-bold text-[#8b5ab8]">R$ 95,00</p>
             </div>
           </div>
 
@@ -114,16 +114,16 @@ function PhoneMockup() {
           <div className="overflow-hidden rounded-xl bg-white shadow-sm opacity-60">
             <div className="relative h-[90px]">
               <Image
-                src="/images/fe-entrada.jpg"
-                alt="Peça à venda"
+                src="/images/catalogo-camisa.png"
+                alt="Camisa Yolo"
                 fill
                 sizes="110px"
                 className="object-cover object-top"
               />
             </div>
             <div className="p-1.5">
-              <p className="text-[8px] font-semibold leading-tight text-[#1e0f38]">Achado especial</p>
-              <p className="text-[7px] text-[#7a6898]">Tam. M</p>
+              <p className="text-[8px] font-semibold leading-tight text-[#1e0f38]">Camisa Yolo</p>
+              <p className="text-[7px] text-[#7a6898]">Tam. G · Cinza</p>
               <p className="mt-0.5 text-[8px] font-bold text-[#8b5ab8]">R$ 110,00</p>
             </div>
           </div>
