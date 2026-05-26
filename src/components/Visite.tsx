@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const horarios = [
+  { dias: "Segunda a Sexta", hora: "09h às 18h" },
+  { dias: "Sábado", hora: "10h às 17h" },
+  { dias: "Domingo", hora: "14h às 18h" },
+];
+
 const contatos = [
   {
     label: "Endereço",
@@ -38,7 +44,7 @@ export default function Visite() {
       />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+        <div className="grid gap-12 md:grid-cols-2 md:items-start">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-balone-yellow-dark">
               Visite
@@ -51,7 +57,23 @@ export default function Visite() {
               Zona Sul de Porto Alegre. É só seguir o amarelo entre as árvores.
             </p>
 
-            <dl className="mt-10 space-y-7">
+            {/* Horários */}
+            <div className="mt-10">
+              <p className="text-xs uppercase tracking-[0.25em] text-balone-yellow-dark">
+                Horários
+              </p>
+              <ul className="mt-3 divide-y divide-balone-sand overflow-hidden rounded-2xl border border-balone-sand bg-white/70">
+                {horarios.map((h) => (
+                  <li key={h.dias} className="flex items-center justify-between px-5 py-3.5">
+                    <span className="text-sm text-balone-muted">{h.dias}</span>
+                    <span className="font-display text-base text-balone-black">{h.hora}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contatos */}
+            <dl className="mt-10 space-y-6">
               {contatos.map((c) => (
                 <div key={c.label}>
                   <dt className="text-xs uppercase tracking-[0.25em] text-balone-yellow-dark">

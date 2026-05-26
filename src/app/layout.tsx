@@ -14,9 +14,44 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Brechó Balonê — Fê Bassi | Viva essa experiência",
+  title: "Brechó Balonê — Fê Bassi | Porto Alegre",
   description:
-    "Brechó Balonê, por Fernanda Bassi. Desde 2010 com curadoria premium de marcas nacionais e importadas em Porto Alegre. Viva essa experiência.",
+    "Brechó Balonê por Fê Bassi. Curadoria premium de marcas nacionais e importadas desde 2010, no Ipanema Sports — Zona Sul de Porto Alegre. Compre também pelo catálogo online.",
+  keywords: [
+    "brechó Porto Alegre",
+    "brechó premium",
+    "brechó Ipanema Porto Alegre",
+    "Fê Bassi",
+    "brechó feminino",
+    "roupas de marca brechó",
+    "moda circular Porto Alegre",
+    "brechó Zona Sul",
+  ],
+  openGraph: {
+    title: "Brechó Balonê — Fê Bassi",
+    description:
+      "Curadoria premium de marcas nacionais e importadas desde 2010. Visite o container amarelo no Ipanema Sports ou compre pelo catálogo online.",
+    url: "https://brechobalone.com.br",
+    siteName: "Brechó Balonê",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "https://brechobalone.com.br/images/fachada-vitrine.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fachada do Brechó Balonê — Fê Bassi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brechó Balonê — Fê Bassi",
+    description:
+      "Curadoria premium de marcas nacionais e importadas desde 2010, em Porto Alegre.",
+    images: ["https://brechobalone.com.br/images/fachada-vitrine.jpg"],
+  },
+  metadataBase: new URL("https://brechobalone.com.br"),
 };
 
 export default function RootLayout({
