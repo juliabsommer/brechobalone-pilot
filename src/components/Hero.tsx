@@ -5,46 +5,64 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative isolate overflow-hidden min-h-[88vh] flex items-end"
+      className="relative overflow-hidden bg-gradient-to-br from-balone-cream via-balone-soft/70 to-white"
     >
-      <Image
-        src="/images/fachada-vitrine.jpg"
-        alt="Fachada amarela do Brechó Balonê com vitrine e araras"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center -z-10"
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 -right-20 h-[520px] w-[520px] rounded-full bg-balone-yellow/30 blur-3xl"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/10 via-black/30 to-black/75" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 -left-20 h-[320px] w-[320px] rounded-full bg-balone-yellow/20 blur-3xl"
+      />
 
-      <div className="mx-auto w-full max-w-6xl px-6 pb-16 md:pb-24 pt-32 text-balone-cream">
-        <p className="mb-4 text-xs md:text-sm uppercase tracking-[0.3em] text-balone-yellow">
-          Desde 2010 · Porto Alegre
-        </p>
-        <h1 className="font-display text-5xl md:text-7xl leading-[1.02] tracking-tight">
-          Brechó Balonê
-        </h1>
-        <p className="mt-6 max-w-2xl font-display italic text-xl md:text-2xl text-balone-cream/90">
-          &ldquo;Viva essa experiência&rdquo;
-        </p>
-        <p className="mt-4 max-w-xl text-base md:text-lg text-balone-cream/80">
-          Curadoria premium de marcas nacionais e importadas, garimpadas a dedo
-          por Fê Bassi.
-        </p>
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:gap-20 md:py-36">
+        <div className="flex flex-col">
+          <p className="text-[11px] uppercase tracking-[0.38em] text-balone-yellow-dark">
+            Desde 2010 · Porto Alegre
+          </p>
+          <h1 className="mt-5 font-display text-5xl leading-[1.05] tracking-tight text-balone-black md:text-[5.5rem]">
+            Brechó<br />Balonê
+          </h1>
+          <p className="mt-6 font-display italic text-xl text-balone-muted md:text-2xl">
+            &ldquo;Viva essa experiência&rdquo;
+          </p>
+          <p className="mt-4 max-w-sm text-base leading-relaxed text-balone-muted md:text-lg">
+            Curadoria premium de marcas nacionais e importadas, garimpadas
+            a dedo por Fê Bassi.
+          </p>
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link
-            href="#sobre"
-            className="inline-flex items-center justify-center rounded-full bg-balone-yellow px-6 py-3 text-sm uppercase tracking-[0.2em] font-medium text-balone-black hover:bg-balone-cream transition-colors"
-          >
-            Conheça a loja
-          </Link>
-          <Link
-            href="#visite"
-            className="inline-flex items-center justify-center rounded-full border border-balone-cream/60 px-6 py-3 text-sm uppercase tracking-[0.2em] font-medium text-balone-cream hover:bg-balone-cream hover:text-balone-black transition-colors"
-          >
-            Como chegar
-          </Link>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link
+              href="#sobre"
+              className="inline-flex items-center justify-center rounded-full bg-balone-black px-6 py-3 text-sm uppercase tracking-[0.2em] text-balone-cream transition-colors hover:bg-balone-yellow-dark"
+            >
+              Conheça a loja
+            </Link>
+            <Link
+              href="#visite"
+              className="inline-flex items-center justify-center rounded-full border border-balone-sand px-6 py-3 text-sm uppercase tracking-[0.2em] text-balone-text transition-colors hover:border-balone-yellow-dark hover:text-balone-yellow-dark"
+            >
+              Como chegar
+            </Link>
+          </div>
+        </div>
+
+        <div className="relative flex justify-center md:justify-end">
+          <div
+            aria-hidden
+            className="absolute -inset-6 rounded-[3rem] bg-balone-yellow/25 blur-2xl"
+          />
+          <div className="relative h-[420px] w-full max-w-[360px] overflow-hidden rounded-[3rem] shadow-2xl md:h-[540px] md:max-w-[420px]">
+            <Image
+              src="/images/fachada-vitrine.jpg"
+              alt="Fachada amarela do Brechó Balonê com vitrine e araras"
+              fill
+              priority
+              sizes="(min-width: 768px) 420px, 90vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

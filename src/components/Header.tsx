@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
+  { label: "Espaços", href: "#espacos" },
   { label: "Sobre", href: "#sobre" },
   { label: "Visite", href: "#visite" },
-  { label: "Contato", href: "#contato" },
 ];
 
 export default function Header() {
@@ -35,29 +35,37 @@ export default function Header() {
           className="flex flex-col leading-none"
           onClick={() => setOpen(false)}
         >
-          <span className="font-display text-xl md:text-2xl tracking-wide text-balone-black">
+          <span className="font-display text-xl tracking-wide text-balone-black md:text-2xl">
             Brechó Balonê
           </span>
-          <span className="font-display text-[11px] md:text-xs italic text-balone-muted mt-0.5">
+          <span className="mt-0.5 font-display text-[11px] italic text-balone-muted md:text-xs">
             Fê Bassi · desde 2010
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm uppercase tracking-[0.18em] text-balone-text hover:text-balone-yellow-dark transition-colors"
+              className="text-sm uppercase tracking-[0.18em] text-balone-text transition-colors hover:text-balone-yellow-dark"
             >
               {item.label}
             </Link>
           ))}
           <Link
+            href="https://catalogobalone.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm uppercase tracking-[0.18em] text-balone-yellow-dark transition-colors hover:text-balone-black"
+          >
+            Catálogo
+          </Link>
+          <Link
             href="https://instagram.com/brechobalonefebassi"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-balone-black px-4 py-2 text-xs uppercase tracking-[0.18em] text-balone-cream hover:bg-balone-yellow-dark hover:text-balone-black transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-balone-yellow-dark px-4 py-2 text-xs uppercase tracking-[0.18em] text-white transition-colors hover:bg-balone-black"
           >
             Instagram
           </Link>
@@ -68,7 +76,7 @@ export default function Header() {
           aria-label="Abrir menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-balone-black/10 text-balone-black"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-balone-sand text-balone-black md:hidden"
         >
           <span className="sr-only">Menu</span>
           <div className="relative h-3 w-5">
@@ -87,24 +95,33 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-balone-sand bg-balone-cream">
+        <div className="border-t border-balone-sand bg-balone-cream md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-6 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm uppercase tracking-[0.18em] text-balone-text border-b border-balone-sand last:border-b-0"
+                className="border-b border-balone-sand py-3 text-sm uppercase tracking-[0.18em] text-balone-text last:border-b-0"
               >
                 {item.label}
               </Link>
             ))}
             <Link
+              href="https://catalogobalone.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="border-b border-balone-sand py-3 text-sm uppercase tracking-[0.18em] text-balone-yellow-dark"
+            >
+              Catálogo
+            </Link>
+            <Link
               href="https://instagram.com/brechobalonefebassi"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex items-center justify-center rounded-full bg-balone-black px-4 py-3 text-xs uppercase tracking-[0.18em] text-balone-cream"
+              className="mt-4 inline-flex items-center justify-center rounded-full bg-balone-yellow-dark px-4 py-3 text-xs uppercase tracking-[0.18em] text-white"
             >
               Instagram
             </Link>

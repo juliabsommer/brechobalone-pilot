@@ -20,10 +20,10 @@ const highlights = [
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="bg-balone-cream py-20 md:py-28">
+    <section id="sobre" className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-lg">
             <Image
               src="/images/fachada-frente.jpg"
               alt="Fachada do Brechó Balonê vista de frente, entre árvores"
@@ -37,10 +37,10 @@ export default function Sobre() {
             <p className="text-xs uppercase tracking-[0.3em] text-balone-yellow-dark">
               Sobre
             </p>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl leading-tight text-balone-black">
+            <h2 className="mt-3 font-display text-4xl leading-tight text-balone-black md:text-5xl">
               Um brechó pra promover o desapego — com estilo.
             </h2>
-            <div className="mt-6 space-y-4 text-base md:text-lg text-balone-muted">
+            <div className="mt-6 space-y-4 text-base text-balone-muted md:text-lg">
               <p>
                 Desde <strong className="text-balone-text">2010</strong>, o
                 Brechó Balonê, idealizado por{" "}
@@ -57,16 +57,16 @@ export default function Sobre() {
               </p>
             </div>
 
-            <dl className="mt-10 grid gap-6 sm:grid-cols-3">
+            <dl className="mt-10 grid gap-4 sm:grid-cols-3">
               {highlights.map((h) => (
                 <div
                   key={h.title}
-                  className="rounded-xl bg-white/60 border border-balone-sand p-5"
+                  className="rounded-2xl border border-balone-sand bg-balone-soft/50 p-5"
                 >
-                  <dt className="font-display text-lg text-balone-black">
+                  <dt className="font-display text-base text-balone-black">
                     {h.title}
                   </dt>
-                  <dd className="mt-2 text-sm text-balone-muted leading-relaxed">
+                  <dd className="mt-2 text-sm leading-relaxed text-balone-muted">
                     {h.description}
                   </dd>
                 </div>
