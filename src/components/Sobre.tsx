@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+const stats = [
+  { n: "14", label: "anos de curadoria" },
+  { n: "500+", label: "peças por temporada" },
+  { n: "2", label: "espaços únicos" },
+  { n: "∞", label: "achados especiais" },
+];
+
 const highlights = [
   {
     title: "Curadoria premium",
@@ -57,7 +64,21 @@ export default function Sobre() {
               </p>
             </div>
 
-            <dl className="mt-10 grid gap-4 sm:grid-cols-3">
+            {/* Stats */}
+            <dl className="mt-10 grid grid-cols-2 gap-4 border-t border-balone-sand pt-8 sm:grid-cols-4">
+              {stats.map((s) => (
+                <div key={s.label} className="flex flex-col">
+                  <dt className="font-display text-3xl text-balone-black md:text-4xl">
+                    {s.n}
+                  </dt>
+                  <dd className="mt-1 text-xs uppercase tracking-[0.2em] text-balone-muted">
+                    {s.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <dl className="mt-8 grid gap-4 sm:grid-cols-3">
               {highlights.map((h) => (
                 <div
                   key={h.title}

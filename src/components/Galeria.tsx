@@ -47,15 +47,22 @@ export default function Galeria() {
           {fotos.map((foto) => (
             <div
               key={foto.src}
-              className={`relative overflow-hidden rounded-2xl bg-balone-soft ${foto.className}`}
+              className={`group relative overflow-hidden rounded-2xl bg-balone-soft ${foto.className}`}
             >
               <Image
                 src={foto.src}
                 alt={foto.alt}
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              {/* Overlay sutil no hover */}
+              <div className="absolute inset-0 bg-balone-black/0 transition-all duration-500 group-hover:bg-balone-black/25" />
+              <div className="absolute bottom-4 left-4 translate-y-2 opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="rounded-full bg-white/90 px-3 py-1 text-xs uppercase tracking-[0.2em] text-balone-text">
+                  Balonê
+                </span>
+              </div>
             </div>
           ))}
         </div>

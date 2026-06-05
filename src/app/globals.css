@@ -47,6 +47,18 @@ body {
 .fade-up-delay-4 { transition-delay: 0.4s; }
 .fade-up-delay-5 { transition-delay: 0.5s; }
 
+/* ── Marquee ────────────────────────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.animate-marquee-left  { animation: marquee-left  linear infinite; }
+.animate-marquee-right { animation: marquee-right linear infinite; }
+
 /* ── Phone mockup float ─────────────────────────────────── */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(-2deg); }
