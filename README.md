@@ -1,36 +1,70 @@
-# Brechó Balonê — Site Piloto
+# brechobalone-pilot
 
-Site institucional do **Brechó Balonê** (Fê Bassi), em Porto Alegre / RS.
-Projeto em evolução — esta primeira versão traz uma home simples com
-apresentação da loja.
+Site institucional do [Brechó Balonê](https://brechobalone.com.br) — brechó premium de Fernanda Bassi, Porto Alegre/RS.
 
 ## Stack
 
-- [Next.js 16](https://nextjs.org) (App Router)
-- React 19 + TypeScript
-- [Tailwind CSS v4](https://tailwindcss.com)
+- **Next.js 16** (App Router, static export)
+- **React 19** + TypeScript
+- **Tailwind CSS v4** com tokens customizados via `@theme`
+- Deploy via **Netlify** (CI/CD no push para `main`)
 
-## Desenvolvimento
+## Decisões de arquitetura
+
+**Static export** — sem server-side rendering. O site é totalmente estático (`output: "export"`), o que elimina cold starts, simplifica o deploy e reduz custo operacional a zero no Netlify Free.
+
+**Tailwind v4 com design tokens** — toda a paleta e tipografia ficam centralizados em `globals.css` via `@theme {}`. Trocar a identidade visual do site inteiro é uma edição de 8 linhas.
+
+**Scroll animations sem biblioteca** — `useInView` customizado com `IntersectionObserver`. Sem dependência extra, sem bundle bloat, comportamento controlado via classes CSS (`fade-up`, `fade-up-delay-*`).
+
+**`--webpack` obrigatório** — o diretório contém caracteres NFD (`[Júlia]`) que causam panic no Turbopack. Workaround aplicado nos scripts `dev` e `build`.
+
+## Desenvolvimento local
 
 ```bash
 npm install
-npm run dev
+npm run dev      # Next.js com --webpack (ver nota acima)
 ```
 
-O app fica disponível em [http://localhost:3000](http://localhost:3000).
+O app sobe em [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-- `npm run dev` — servidor de desenvolvimento
-- `npm run build` — build de produção
-- `npm run start` — roda o build
-- `npm run lint` — ESLint
+| Comando | O que faz |
+|---|---|
+| `npm run dev` | Dev server com hot reload |
+| `npm run build` | Build estático para `out/` |
+| `npm run lint` | ESLint |
 
 ## Estrutura
 
 ```
 src/
-  app/          # App Router (layout, page, globals.css)
-  components/   # Header, Hero, Sobre, Visite, Footer
-public/images/  # Imagens da loja
+  app/
+    globals.css       # Tokens de design (paleta, tipografia, animações)
+    layout.tsx        # Metadados SEO, Open Graph, fontes
+    page.tsx          # Composição das seções + marquees
+  components/
+    Header.tsx        # Navbar responsiva com menu mobile
+    Hero.tsx          # Seção inicial com imagem e CTAs
+    Marquee.tsx       # Faixa rolante reutilizável (keywords / marcas)
+    Catalogo.tsx      # CTA do catálogo online + phone mockup
+    Espacos.tsx       # Mini Museu Balonê e Espaço Boho
+    Galeria.tsx       # Grid de fotos da loja com hover overlay
+    Quote.tsx         # Seção manifesto editorial
+    Depoimentos.tsx   # Cards de avaliações
+    Sobre.tsx         # História da loja + stats
+    Visite.tsx        # Horários, endereço e contatos
+    Footer.tsx
+    WhatsAppFloat.tsx # Botão fixo de contato
+  hooks/
+    useInView.ts      # IntersectionObserver para scroll animations
+public/
+  images/             # Fotos da loja e do catálogo
 ```
+
+## Deploy
+
+O Netlify detecta push na `main` e roda `npm run build`. O diretório `out/` é publicado diretamente. Configuração em `netlify.toml` (headers de segurança incluídos).
+
+DNS apontando para Netlify via delegação de nameservers no Registro.br.
